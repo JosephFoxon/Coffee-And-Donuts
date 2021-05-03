@@ -8,7 +8,6 @@ namespace Coffee_and_Donuts
     {
         public delegate void checkDoneDelegate();
         public delegate void addToOrderDelegate(int i);
-        public delegate void makeItem();
         private int numDonutsOutstanding;
         private int numDonutsMade = 0;
         private bool isDonutsDone = false;
@@ -26,7 +25,6 @@ namespace Coffee_and_Donuts
         public bool IsDone { get => isDone; set => isDone = value; }
 
         event addToOrderDelegate orderEvent;
-        event makeItem itemMade;
         event checkDoneDelegate checkDone;
 
         public void addDonuts(int i)

@@ -40,17 +40,17 @@ namespace Coffee_and_Donuts
             worker.coffeeChecker();
             worker.donutChecker();
             worker.Checker();
-            if(worker.IsDonutsDone==true)
+            if(worker.IsDonutsDone.Equals(true))
             {
                 labelDonutReady.Show();
                 labelDonutsWaiting.Hide();
             }
-            if(worker.IsCoffeeDone==true)
+            if(worker.IsCoffeeDone.Equals(true))
             {
                 labelDonutReady.Show();
                 labelDonutsWaiting.Hide();
             }
-            if(worker.IsDone)
+            if(worker.IsDone.Equals(true))
             {
                 labelCompleteOrder.Show();
             }
