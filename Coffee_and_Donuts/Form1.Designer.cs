@@ -40,6 +40,7 @@ namespace Coffee_and_Donuts
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.labelCoffeeWait = new System.Windows.Forms.Label();
             this.labelDonutsWaiting = new System.Windows.Forms.Label();
+            this.labelCompleteOrder = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxNumDonuts
@@ -104,6 +105,7 @@ namespace Coffee_and_Donuts
             this.buttonCoffee.TabIndex = 6;
             this.buttonCoffee.Text = "Make coffee x1";
             this.buttonCoffee.UseVisualStyleBackColor = true;
+            this.buttonCoffee.Click += new System.EventHandler(this.buttonCoffee_Click);
             // 
             // buttonDonut
             // 
@@ -113,6 +115,7 @@ namespace Coffee_and_Donuts
             this.buttonDonut.TabIndex = 7;
             this.buttonDonut.Text = "Make donut x1";
             this.buttonDonut.UseVisualStyleBackColor = true;
+            this.buttonDonut.Click += new System.EventHandler(this.buttonDonut_Click);
             // 
             // buttonUpdate
             // 
@@ -122,6 +125,7 @@ namespace Coffee_and_Donuts
             this.buttonUpdate.TabIndex = 8;
             this.buttonUpdate.Text = "Update Status";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // labelCoffeeWait
             // 
@@ -141,11 +145,21 @@ namespace Coffee_and_Donuts
             this.labelDonutsWaiting.TabIndex = 10;
             this.labelDonutsWaiting.Text = "You have donuts outstanding!";
             // 
+            // labelCompleteOrder
+            // 
+            this.labelCompleteOrder.AutoSize = true;
+            this.labelCompleteOrder.Location = new System.Drawing.Point(287, 337);
+            this.labelCompleteOrder.Name = "labelCompleteOrder";
+            this.labelCompleteOrder.Size = new System.Drawing.Size(131, 15);
+            this.labelCompleteOrder.TabIndex = 11;
+            this.labelCompleteOrder.Text = "Your order Is Complete!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelCompleteOrder);
             this.Controls.Add(this.labelDonutsWaiting);
             this.Controls.Add(this.labelCoffeeWait);
             this.Controls.Add(this.buttonUpdate);
@@ -158,7 +172,7 @@ namespace Coffee_and_Donuts
             this.Controls.Add(this.textBoxNumCoffees);
             this.Controls.Add(this.textBoxNumDonuts);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Coffee Shop";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +191,7 @@ namespace Coffee_and_Donuts
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Label labelCoffeeWait;
         private System.Windows.Forms.Label labelDonutsWaiting;
+        private System.Windows.Forms.Label labelCompleteOrder;
     }
 }
 

@@ -18,6 +18,7 @@ namespace Coffee_and_Donuts
             InitializeComponent();
             labelCoffeeReady.Hide();
             labelDonutReady.Hide();
+            labelCompleteOrder.Hide();
         }
 
         private void textBoxNumCoffees_TextChanged(object sender, EventArgs e)
@@ -29,6 +30,40 @@ namespace Coffee_and_Donuts
         {
             worker.donutAdder(Int32.Parse(textBoxNumDonuts.Text));
             worker.coffeeAdder(Int32.Parse(textBoxNumCoffees.Text));
+            labelCoffeeReady.Hide();
+            labelDonutReady.Hide();
+            labelCompleteOrder.Hide();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            worker.coffeeChecker();
+            worker.donutChecker();
+            worker.Checker();
+            if(worker.IsDonutsDone==true)
+            {
+                labelDonutReady.Show();
+                labelDonutsWaiting.Hide();
+            }
+            if(worker.IsCoffeeDone==true)
+            {
+                labelDonutReady.Show();
+                labelDonutsWaiting.Hide();
+            }
+            if(worker.IsDone)
+            {
+                labelCompleteOrder.Show();
+            }
+        }
+
+        private void buttonCoffee_Click(object sender, EventArgs e)
+        {
+            worker.coffeeMaker();
+        }
+
+        private void buttonDonut_Click(object sender, EventArgs e)
+        {
+            worker.donutMaker();
         }
     }
 }
