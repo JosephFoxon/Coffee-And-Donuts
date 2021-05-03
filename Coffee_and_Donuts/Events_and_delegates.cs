@@ -6,53 +6,93 @@ namespace Coffee_and_Donuts
 {
     class Events_and_delegates
     {
-        public delegate bool checkDoneDelegate();
-        public delegate int addToOrderDelegate(int i);
-        public int numDonutsOutstanding;
-        public int numDonutsMade = 0;
-        public bool isDonutsDone = false;
-        public int numCoffeeOutstanding;
-        public int numCoffeeMade = 0;
-        public bool isCoffeeDone = false;
-        public bool isDone = false;
+        public delegate void checkDoneDelegate();
+        public delegate void addToOrderDelegate(int i);
+        public delegate void makeItem();
+        private int numDonutsOutstanding;
+        private int numDonutsMade = 0;
+        private bool isDonutsDone = false;
+        private int numCoffeeOutstanding;
+        private int numCoffeeMade = 0;
+        private bool isCoffeeDone = false;
+        private bool isDone = false;
+
+        public int NumDonutsOutstanding { get => numDonutsOutstanding; set => numDonutsOutstanding = value; }
+        public int NumDonutsMade { get => numDonutsMade; set => numDonutsMade = value; }
+        public bool IsDonutsDone { get => isDonutsDone; set => isDonutsDone = value; }
+        public int NumCoffeeOutstanding { get => numCoffeeOutstanding; set => numCoffeeOutstanding = value; }
+        public int NumCoffeeMade { get => numCoffeeMade; set => numCoffeeMade = value; }
+        public bool IsCoffeeDone { get => isCoffeeDone; set => isCoffeeDone = value; }
+        public bool IsDone { get => isDone; set => isDone = value; }
+
+        event addToOrderDelegate orderEvent;
+        event makeItem itemMade;
+        event checkDoneDelegate checkDone;
 
         public void addDonuts(int i)
         {
-            numDonutsOutstanding = i;
+            NumDonutsOutstanding = i;
         }
         public void madeDonuts()
         {
-            numDonutsMade++;
+            NumDonutsMade++;
         }
         public void checkDonutsIsDone()
         {
-            if (numDonutsMade >= numDonutsOutstanding)
+            if (NumDonutsMade >= NumDonutsOutstanding)
             {
-                isDonutsDone = true;
+                IsDonutsDone = true;
             }
         }
         public void addCoffee(int i)
         {
-            numCoffeeOutstanding = i;
+            NumCoffeeOutstanding = i;
         }
         public void madeCoffee()
         {
-            numCoffeeMade++;
+            NumCoffeeMade++;
         }
         public void checkCoffeeIsDone()
         {
-            if (numCoffeeMade >= numCoffeeOutstanding)
+            if (NumCoffeeMade >= NumCoffeeOutstanding)
             {
-                isCoffeeDone = true;
+                IsCoffeeDone = true;
             }
         }
         public void checkIsDone()
         {
-            if((isCoffeeDone==true)&&(isDonutsDone==true))
+            if((IsCoffeeDone==true)&&(IsDonutsDone==true))
             {
-                isDone = true;
+                IsDone = true;
             }
         }
-               
+        public void coffeeAdder(int i)
+        {
+            this.orderEvent += new addToOrderDelegate(addCoffee);            
+        }
+        public void donutAdder(int i)
+        {
+            this.orderEvent += new addToOrderDelegate(addDonuts);            
+        }
+        public void donutMaker()
+        {
+            this.itemMade += new makeItem(madeDonuts);
+        }
+        public void coffeeMaker()
+        {
+            this.itemMade += new makeItem(madeCoffee);
+        }
+        public void coffeeChecker()
+        {
+            this.checkDone += new checkDoneDelegate(checkCoffeeIsDone);
+        }
+        public void donutChecker()
+        {
+            this.checkDone += new checkDoneDelegate(checkDonutsIsDone);
+        }
+        public void Checker()
+        {
+            this.checkDone += new checkDoneDelegate(checkIsDone);
+        }
     }
 }

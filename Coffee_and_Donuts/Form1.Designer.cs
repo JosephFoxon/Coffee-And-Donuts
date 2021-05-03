@@ -32,9 +32,14 @@ namespace Coffee_and_Donuts
             this.textBoxNumDonuts = new System.Windows.Forms.TextBox();
             this.textBoxNumCoffees = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelCoffeeReady = new System.Windows.Forms.Label();
+            this.labelDonutReady = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonCoffee = new System.Windows.Forms.Button();
+            this.buttonDonut = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.labelCoffeeWait = new System.Windows.Forms.Label();
+            this.labelDonutsWaiting = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxNumDonuts
@@ -63,23 +68,23 @@ namespace Coffee_and_Donuts
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome to the coffe shop, you will be alerted as soon as your order is ready ";
             // 
-            // label2
+            // labelCoffeeReady
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Your coffees are ready!";
+            this.labelCoffeeReady.AutoSize = true;
+            this.labelCoffeeReady.Location = new System.Drawing.Point(129, 247);
+            this.labelCoffeeReady.Name = "labelCoffeeReady";
+            this.labelCoffeeReady.Size = new System.Drawing.Size(126, 15);
+            this.labelCoffeeReady.TabIndex = 3;
+            this.labelCoffeeReady.Text = "Your coffees are ready!";
             // 
-            // label3
+            // labelDonutReady
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 230);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Your donuts are ready!";
+            this.labelDonutReady.AutoSize = true;
+            this.labelDonutReady.Location = new System.Drawing.Point(129, 288);
+            this.labelDonutReady.Name = "labelDonutReady";
+            this.labelDonutReady.Size = new System.Drawing.Size(125, 15);
+            this.labelDonutReady.TabIndex = 4;
+            this.labelDonutReady.Text = "Your donuts are ready!";
             // 
             // button1
             // 
@@ -91,14 +96,64 @@ namespace Coffee_and_Donuts
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonCoffee
+            // 
+            this.buttonCoffee.Location = new System.Drawing.Point(541, 76);
+            this.buttonCoffee.Name = "buttonCoffee";
+            this.buttonCoffee.Size = new System.Drawing.Size(144, 23);
+            this.buttonCoffee.TabIndex = 6;
+            this.buttonCoffee.Text = "Make coffee x1";
+            this.buttonCoffee.UseVisualStyleBackColor = true;
+            // 
+            // buttonDonut
+            // 
+            this.buttonDonut.Location = new System.Drawing.Point(541, 122);
+            this.buttonDonut.Name = "buttonDonut";
+            this.buttonDonut.Size = new System.Drawing.Size(144, 23);
+            this.buttonDonut.TabIndex = 7;
+            this.buttonDonut.Text = "Make donut x1";
+            this.buttonDonut.UseVisualStyleBackColor = true;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(287, 199);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(125, 23);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.Text = "Update Status";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            // 
+            // labelCoffeeWait
+            // 
+            this.labelCoffeeWait.AutoSize = true;
+            this.labelCoffeeWait.Location = new System.Drawing.Point(433, 247);
+            this.labelCoffeeWait.Name = "labelCoffeeWait";
+            this.labelCoffeeWait.Size = new System.Drawing.Size(161, 15);
+            this.labelCoffeeWait.TabIndex = 9;
+            this.labelCoffeeWait.Text = "You have coffee outstanding!";
+            // 
+            // labelDonutsWaiting
+            // 
+            this.labelDonutsWaiting.AutoSize = true;
+            this.labelDonutsWaiting.Location = new System.Drawing.Point(433, 290);
+            this.labelDonutsWaiting.Name = "labelDonutsWaiting";
+            this.labelDonutsWaiting.Size = new System.Drawing.Size(165, 15);
+            this.labelDonutsWaiting.TabIndex = 10;
+            this.labelDonutsWaiting.Text = "You have donuts outstanding!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelDonutsWaiting);
+            this.Controls.Add(this.labelCoffeeWait);
+            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonDonut);
+            this.Controls.Add(this.buttonCoffee);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelDonutReady);
+            this.Controls.Add(this.labelCoffeeReady);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxNumCoffees);
             this.Controls.Add(this.textBoxNumDonuts);
@@ -114,9 +169,14 @@ namespace Coffee_and_Donuts
         private System.Windows.Forms.TextBox textBoxNumDonuts;
         private System.Windows.Forms.TextBox textBoxNumCoffees;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelCoffeeReady;
+        private System.Windows.Forms.Label labelDonutReady;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCoffee;
+        private System.Windows.Forms.Button buttonDonut;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Label labelCoffeeWait;
+        private System.Windows.Forms.Label labelDonutsWaiting;
     }
 }
 
