@@ -58,12 +58,12 @@ namespace Coffee_and_Donuts
 
         private void buttonCoffee_Click(object sender, EventArgs e)
         {
-            worker.coffeeMaker();
+            worker.madeCoffee();
         }
 
         private void buttonDonut_Click(object sender, EventArgs e)
         {
-            worker.donutMaker();
+            worker.madeDonuts();
         }
     }
 }

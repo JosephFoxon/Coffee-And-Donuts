@@ -74,14 +74,8 @@ namespace Coffee_and_Donuts
         {
             this.orderEvent += new addToOrderDelegate(addDonuts);            
         }
-        public void donutMaker()
-        {
-            this.itemMade += new makeItem(madeDonuts);
-        }
-        public void coffeeMaker()
-        {
-            this.itemMade += new makeItem(madeCoffee);
-        }
+        
+        
         public void coffeeChecker()
         {
             this.checkDone += new checkDoneDelegate(checkCoffeeIsDone);
